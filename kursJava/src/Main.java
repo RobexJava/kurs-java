@@ -1,32 +1,29 @@
-public class Man {
+import java.util.Scanner;
 
-    private int age;
-
-    public Man(int age) {
-        this.age = age;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
+public class Main {
     public static void main(String[] args) {
-
-        Man man = new Man(22);
-
-        String securityAnswer;
-
-        if (man.getAge() >= 18) {
-            securityAnswer = "Все в порядке, проходите!";
-        } else {
-            securityAnswer = "Этот фильм не подходит для вашего возраста!";
+        boolean isContinue = true;
+        int x = 0;
+        int y = 0;
+        while (isContinue) {
+            System.out.println("Выберите куда двинуться:\n1 - вверх\n2 - вниз\n3 - вправо\n4 - влево");
+            int input = new Scanner(System.in).nextInt();
+            if (input == 1) {
+                y++;
+            }else
+            if (input == 2) {
+                y--;
+            }else
+            if (input == 3) {
+                x++;
+            }else
+            if (input == 4) {
+                x--;
+            } else {
+                System.out.println("Error");
+                isContinue = false;
+            }
         }
-
-        System.out.println(securityAnswer);
-
+        System.out.println("Координата у = " + y + "; Координата х = "+ x);
     }
 }
